@@ -1,0 +1,24 @@
+import { db } from './firebase'; // Make sure to configure Firebase
+import { collection, addDoc } from '@firebase/firestore';
+
+const saveTicketToFirestore = async (tripData, modalData) => {
+  try {
+    const docRef = await addDoc(collection(db, 'tickets'), {
+      ...tripData,
+      ...modalData,
+      createdAt: new Date()
+    });
+    console.log('Document written with ID: ', docRef.id);
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
+};
+
+
+export { saveTicketToFirestore };
+
+// Example usage
+// const handleBookNow = (tripData) => {
+//   setShowModal(true);
+//   saveTicketToFirestore(tripData, { modalField1: 'value1', modalField2: 'value2' });
+// };
