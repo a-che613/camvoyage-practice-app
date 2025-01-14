@@ -25,7 +25,7 @@ export default function Home() {
       const querySnapshot = await getDocs(tripsCollectionRef);
 
       querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
+        // console.log(`${doc.id} => ${doc.data()}`);
         tripArr.push(doc.data());
       });
 
@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   // const trips = await getTrips() || [];
-  console.log('The trips data is: ', trips);
+  // console.log('The trips data is: ', trips);
 
 
   const navLinks = [

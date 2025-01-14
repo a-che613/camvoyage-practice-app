@@ -23,3 +23,16 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 1024px) {
+  .box-container {
+    width: 95% !important;
+    max-height: 95% !important;
+  }
+}  
+
+@media screen and (min-width: 1024px) {
+  .box-container {
+    max-height: 95% !important;
+  }
+}
